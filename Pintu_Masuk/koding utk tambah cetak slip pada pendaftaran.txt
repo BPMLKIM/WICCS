@@ -1,0 +1,106 @@
+
+buat untuk semua pintu masuk
+
+Pintu_Masuk.aspx
+
+screen
+tambah field barcoded dan enabled=false kat bawah
+
+
+
+
+
+koding
+function printReport(strCetak)
+{
+
+
+var winTitle;
+
+var str ="http://report.lkim.gov.my/pintu_masuk/slip.aspx?barcode="+ document.all.barcoded.value +"&cetak="+ strCetak+"&pname="+document.all.printer_name.value;
+
+str ="slip.aspx?barcode="+ document.all.barcoded.value +"&cetak="+ strCetak+"&pname="+document.all.printer_name.value;
+
+
+if (strCetak==1)
+{
+    if (document.all.printer_name.value!="")
+    {    
+      window.open(str,'eSKPI','width=5,height=5,status=yes');
+    }
+    else
+    {
+     alert("Sila Pilih Printer Terlebih Dahulu !!!");
+    }
+}
+else
+{
+window.open(str,'eSKPI','');
+}
+
+}
+
+function showSenaraiprinter()
+{
+  window.open('../pembayaran/senarai-printer.aspx','test','width=310,height=420,status=yes');  
+}
+
+
+
+--------------
+copy button ni
+
+ <input id="Button5" runat="server"  onclick="printReport('1');"
+                        style="border-right: #333333 1px ridge; padding-right: 1px; border-top: #ffffff 1px ridge;
+                        padding-left: 1px; font-size: 10px; padding-bottom: 1px; border-left: #ffffff 1px ridge;
+                        color: #000000; padding-top: 1px; border-bottom: #000000 1px ridge; font-family: MS Shell Dlg,verdana,??;
+                        background-color: #f1f1f1" type="button" value="Cetak Slip" />
+                   <input
+             id="Button4" onclick="showSenaraiprinter();" runat="server" style="border-right: #333333 1px ridge;
+             padding-right: 1px; border-top: #ffffff 1px ridge; padding-left: 1px; font-size: 10px;
+             padding-bottom: 1px; border-left: #ffffff 1px ridge; color: #000000; padding-top: 1px;
+             border-bottom: #000000 1px ridge; font-family: MS Shell Dlg,verdana,??; background-color: #f1f1f1"
+             type="button" value="Pilih Printer"  />&nbsp;
+
+------
+dekat vb
+
+page_load tambah bawah
+
+Dim myHost As String
+        Dim host As System.Net.IPHostEntry
+        host = System.Net.Dns.GetHostEntry(Request.ServerVariables.Item("REMOTE_addr"))
+        myHost = host.HostName
+
+Dim SQLReader As System.Data.SqlClient.SqlDataReader
+        Dim sqlprint As String = "select printer_name from printername where computer_name='" & Trim(myHost) & "'"
+        SQLReader = opClass.DataReader(sqlprint)
+
+        If SQLReader.HasRows Then
+
+            SQLReader.Read()
+
+            printer_name.Value = SQLReader("printer_name")
+
+        Else
+            printer_name.Value = Replace(printer_name.Value, "/", "\")
+
+        End If
+
+        SQLReader.Close()
+        SQLReader = Nothing
+
+
+tambah barcoded.text=barcode
+
+
+------------------
+form baru
+
+slip.aspx
+slip.aspx.vb
+
+------------------
+report baru
+
+slip.rpt

@@ -1,0 +1,155 @@
+body {
+	margin:0;
+	background: #271411;
+}
+
+a:link, a:visited {
+	color: #fffffe;
+}
+#nav a:hover {
+	color:#ffff99;
+	text-decoration: underline;
+}
+/* *-*-*-*- *-*-*-*- *-*-*-*-        end <a> rules             *-*-*-*- *-*-*-*- *-*-*-*- 
+*                                   _____________                                      */
+
+/* *-*-*-*- *-*-*-*- *-*-*         Begin Menu tree rules        *-*-*-*- *-*-*-*- *-*-*-*- 
+*                                 _____________________                                */
+.button{
+	/* may cause windows bug:
+	   position: relative;
+	*/
+	letter-spacing: .2em;
+	z-index: 100000;
+	cursor: default;
+	font-family:  "Lucida Grande", "Times New Roman";
+	font: menu;
+}
+
+.buttonlabel{
+	font-size: 13px;
+	height: 14px;
+	/* may cause windows bug:
+	   position: relative;
+	*/
+	font-weight: 800;
+	cursor: default;
+	
+	/** padding/margin Causes Freeze in
+	 *  Windows IE6.
+	 *  Bug discovered by 
+	 *  Michael of 13thparallel.org
+	 *
+	 * padding: .05em .5em .05em .4em;
+	 * margin: 1px 1px 0px 1px;
+	 */
+	
+	color: #fffffe;
+	border-width: 1px;
+}
+.buttonlabel img {
+	margin-bottom: -4px;
+	margin-right: -3px;
+}
+
+
+/* label mouseover state  */
+.labelHover {
+	color: #ffedc9;
+}
+
+/* depressed label state  */
+.labelDown {
+	color: #ffc7a9;
+}
+
+/* depressed label mouseover state  */
+.labelHover.labelDown {
+}
+
+
+.menuNode {
+	font-size: 14px;
+	border-bottom: 1px solid #BBBBBB;
+	border-left: 1px solid #BBBBBB;
+	height: 17px;
+}
+
+.menuNode a, .menuItem a{
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: 400;
+	padding: 0px 3px 1px 8px;
+	text-decoration: none;
+	width: auto;
+}
+
+.menuNode a:hover, .menuItem a:hover{
+	text-decoration: underline;
+}
+
+.menu {
+	padding-left: 6px;
+	padding-bottom:  .6em;
+	padding-top: 1px;
+	font-family: Trebuchet MS, Arial, sans-serif;
+	margin-bottom: -3px;
+ }
+
+ .menu .menu, .menu .menu .menu{ /* submenus & submenus' submenus  */
+	border-left: 1px solid #BBBBBB;
+	padding-left: 10px;
+ }			 
+ .menu .menu .menu{ /* submenus' submenus  */
+	height:1%;
+ }			 
+#nav {
+	position: absolute;
+	left: 0;
+	top:0;
+	border: 1px solid #ccc;
+
+	background: #46251f;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #5b3029;
+
+	width: 202px;
+	height: 360px;
+	overflow: auto;
+	margin: 0;
+	white-space: nowrap;
+}
+
+
+/* *-*-*-*- *-*-*-*- *-*-*-*         End Menu tree rules        *-*-*-*- *-*-*-*- *-*-*-*- 
+*                                   ___________________                                */
+h2 {
+	color: #ffc7a9;
+	text-align: center;
+	font-family: Trebuchet MS;
+}
+
+#contents {
+	background-color: #79433a;
+	font-family: "Trebuchet MS", tahoma, sans-serif;
+	color: #000;
+	margin: 16px 210px;
+	height: auto;
+	width: 540px;
+	padding: 20px;
+}
+/* *-*-*-*- *-*-*-*- *-*-*-*-        @media print rules        *-*-*-*- *-*-*-*- *-*-*-*- 
+*                                   __________________                                 */
+@media print {
+
+	title { display: none }
+	#nav {
+		width: 0;
+		height: 0;
+		padding: 0px;
+		margin: 0;
+		display: none;
+	}
+
+}

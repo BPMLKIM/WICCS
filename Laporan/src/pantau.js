@@ -1,0 +1,15 @@
+d = new dTree('d');
+d.config.closeSameLevel=true;
+d.config.useIcons=false;
+d.config.folderLinks = false;
+d.add(0,-1,'');
+d.add(1,0,'Senarai Pemantauan Kompleks','');		
+d.add(2,1,'Daftar','');		
+d.add(3,2,'Laporan Daftar Kenderaan Masuk/Keluar (Harian) (SPSB 05) - Import/Eksport','Papar_Pilihan.aspx?id=64&rptH=SPSB05.RPT&RptB=SPSB05B.rpt&RptT=SPSB05T.rpt');	
+d.add(4,2,'Laporan Daftar Pemeriksaan Import Mengikut Pegawai ','Papar_Pilihan.aspx?id=65&RptH=ICCS22I.rpt&RptB=ICCS22IB.rpt&RptT=ICCS22IT.rpt');	
+d.add(5,2,'Laporan Daftar Pemeriksaan Eksport Mengikut Pegawai ','Papar_Pilihan.aspx?id=66&RptH=ICCS22E.rpt&RptB=ICCS22EB.rpt&RptT=ICCS22ET.rpt');	
+d.add(6,2,'Laporan Daftar Pengisytiharan Import Mengikut Pegawai ','Papar_Pilihan.aspx?id=67&RptH=ICCS23I.rpt&RptB=ICCS23IB.rpt&RptT=ICCS23IT.rpt');	
+d.add(7,2,'Laporan Daftar Pengisytiharan Eksport Mengikut Pegawai ','Papar_Pilihan.aspx?id=68&RptH=ICCS23E.rpt&RptB=ICCS23EB.rpt&RptT=ICCS23ET.rpt');	
+d.add(8,2,'Laporan Daftar Pembayaran Mengikut Pegawai ','Papar_Pilihan.aspx?id=69&RptH=ICCS24I.rpt&RptB=ICCS24B.rpt&RptT=ICCS24T.rpt');	
+d.add(9,2,'Laporan Daftar Pendaftaran Pintu Mengikut Pegawai ','Papar_Pilihan.aspx?id=70&RptH=ICCS25I.rpt&RptB=ICCS25B.rpt&RptT=ICCS25T.rpt');	
+document.write(d);

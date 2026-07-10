@@ -1,0 +1,154 @@
+/** menu.css
+* Sample skin for AnimTree
+*/
+
+body {
+	margin:0;
+	padding: 0;
+	background: #ffffff;
+}
+a:visited {
+	color: #000;
+}
+#nav a:hover {
+	color: #00f;
+	text-decoration: none;
+}
+/* *-*-*-*- *-*-*-*- *-*-*-*-        end <a> rules             *-*-*-*- *-*-*-*- *-*-*-*- 
+ *                                   _____________                                      */
+
+/* *-*-*-*- *-*-*-*- *-*-*         Begin Menu tree rules        *-*-*-*- *-*-*-*- *-*-*-*- 
+ *                                 _____________________                                */
+.button{
+	/* may cause windows bug:
+	   position: relative;
+	*/
+	letter-spacing: .2em;
+	z-index: 100000;
+	cursor: default;
+	font-family:  "Arial", "Times New Roman";
+	font: menu;
+	font-size: 12px;
+	
+}
+
+.buttonlabel{
+	font-size: 12px;
+	height: 14px;
+	/* may cause windows bug:
+	   position: relative;
+	*/
+	font-weight: 800;
+	cursor: default;
+	
+	/** margin may cause freeze in
+	 *  Windows IE6.
+	 *  Bug discovered by 
+	 *  Michael of 13thparallel.org
+	 *
+	 * padding: .05em .5em .05em .4em;
+	 * margin: 1px 1px 0px 1px;
+	 */
+	
+	color: #000;
+	border-width: 1px;
+}
+.buttonlabel img {
+	margin-bottom: -4px;
+	margin-right: -3px;
+}
+
+.labelHover {
+	color: #090601;
+}
+.labelDown {
+}
+.labelHover.labelDown {
+}
+
+.menuNode {
+	font-size: 12px;
+	border-left: 1px solid #BBBBBB;
+	border-bottom: 1px solid #BBBBBB;
+	padding: 0px 3px 1px 0px;
+}
+
+.menuNode a {
+	color: #000;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 400;
+	padding: 0px 3px 1px 0px;
+	text-decoration: none;
+	width: auto;
+}
+
+.menuNode a:hover {
+	text-decoration: none;
+}
+
+.menu {
+	left: 2px;
+	padding-left: 10px;
+	padding-bottom:  .6em;
+	padding-top: 0px;
+	font-family: Arial, sans-serif;
+	border-left: none;
+	border-bottom: none;
+ }
+ .menu .menu, .menu .menu .menu{ /* submenus & submenus' submenus  */
+	padding-bottom:  .6em;
+	font-family: Arial, sans-serif;
+	border-left: none;
+	border-bottom: none;
+ }			 
+ .menu .menu .menu{ /* submenus' submenus  */
+	padding-bottom:  .6em;
+	padding-top: 0px;
+	padding-left: 10px;
+	font-family: Arial MS, sans-serif;
+	border-left: 0px;
+	border-bottom: 0px;
+ }	
+#nav {
+	border: 1px solid #ccc;
+	background: #FFFFFF;
+	color: #000;
+	overflow: hidden;
+	position: absolute;
+	width: 188px;
+	height: 600px;
+	overflow: auto;
+	margin: 0;
+	left: 0;
+	top:0;
+	white-space: nowrap;
+	-moz-user-select: none;
+}
+		
+
+
+/* *-*-*-*- *-*-*-*- *-*-*-*         End Menu tree rules        *-*-*-*- *-*-*-*- *-*-*-*- 
+*                                   ___________________                                */
+h1{
+	color: #777;
+	font-size: 18px;
+	text-indent: 24px;
+	padding: 10px;
+}
+/* *-*-*-*- *-*-*-*- *-*-*-*-        @media print rules        *-*-*-*- *-*-*-*- *-*-*-*- 
+*                                   __________________                                 */
+@media print {
+
+	title { display: none }
+	#nav {
+		position: absolute;
+		width: 0;
+		height: 0;
+		padding: 0px;
+		margin: 0;
+		z-index: -1;
+		display: none;
+	}
+
+}

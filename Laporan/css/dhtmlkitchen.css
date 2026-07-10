@@ -1,0 +1,267 @@
+html{ 
+	margin: 0;
+	height: 100%;
+	width: 100%;
+ }
+
+body {
+	margin: 0 0 0 0;
+	position: relative;
+	height: 100%;
+	background-color: #E3F4FF;
+	background-image: url("../img/gui_gen_top.jpg");
+	background-repeat: no-repeat;
+	font-family: "trebuchet ms", arial, sans-serif;
+}
+
+a:link, a:visited {
+	color: #353c5e;
+}
+img {
+	border: 0;
+}
+
+/****************** Begin Menu tree rules
+ * 
+ */
+.button{
+	/* may cause windows bug:
+	   position: relative;
+	*/
+	letter-spacing: .2em;
+	z-index: 100000;
+	cursor: default;
+	font-family:  Arial Rounded MT Bold, "Lucida Grande", Arial, "Trebuchet MS" ;
+}
+
+.buttonlabel{
+	font-size: 13px;
+	height: 2.5ex;
+	display: block;
+	/* may cause windows bug:
+	   position: relative;
+	*/
+	font-weight: 800;
+	cursor: default;
+	
+	text-align: left;
+	text-indent: .5em;
+	color: #131623;
+	border-width: 1px;
+	border-left-width: 6px;
+	border-color: transparent;
+	border-style: solid;
+	background-color: #E1F1FF;
+	border-width: 1px 6px 1px 6px;
+	border-color: #E1F1FF;
+	-moz-border-radius: 16px;
+}
+
+
+.labelHover {
+	background-color: #DEF0FF;
+	border-color: #BDE1FF;
+	border-style: solid;
+	border-top-width: 1px;
+	border-right-width: 6px;
+	border-left-width: 6px;
+ }
+
+.labelDown {
+	text-indent: .5em;
+/*	text-align: center;*/
+	color: #131623;
+	background-color: #F3FAFF;
+	border-right-width: 6px;
+	border-left-width: 6px;
+	border-style: solid;
+	border-color: #BDE1FF;
+ 	-moz-border-radius: 16px 16px 0 0;
+}
+
+.labelHover.labelDown{
+	color: #33365c;
+	border-right: 6px solid #BDE1FF;
+}
+
+.menuNode {
+	font-size: 14px;
+	border-bottom: 1px solid #EBF6FF;
+	border-left: 1px solid #EBF6FF;
+	height: 17px;
+}
+
+
+*.menuNode {
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: 400;
+	padding: 0px 2px 1px 8px;
+	text-decoration: none;
+	width: auto;
+	display: block;
+	color: #0e0f26;
+}
+
+div.disabled {
+	color: #5E6C77;
+}
+
+a.menuNode:hover,  a.menuNode:focus {
+	text-decoration: none;
+	background-color: #F8FCFF;
+}
+
+.menu {
+	padding-left: 6px;
+	padding-bottom:  .6em;
+	padding-top: 1px;
+	margin-top: -2px;
+	margin-bottom: -3px;
+	font-family: Trebuchet MS, Arial, sans-serif;
+	background-color: #F3FAFF;
+	border-width: 0  ;
+	border-color: #BDE1FF;
+	border-style: solid;
+ 	border-bottom: 1px solid #BDE1FF;
+	border-right: 6px solid #BDE1FF;
+	border-left: 6px solid #BDE1FF;
+	-moz-border-radius: 0 0 16px 16px;
+
+}
+
+.menu .buttonlabel {
+	border-width: 1px 0px 0 4px;
+	background: inherit;
+	border-color: #EBF6FF;
+}
+
+.button.menuNode {
+	border-left: 0;
+	border-bottom: 0;
+}
+
+ .menu .menu { /* submenus & submenus' submenus  */
+	border-width: 0 0 0 4px;
+	margin-left: 8px;
+	margin-top: -6px;
+	padding-top: 6px;
+ 	padding-left: 0;
+	border-color: #EBF6FF;
+	border-style: solid;
+ 	background-color: transparent;
+}
+
+.menu .menu .menuNode {
+ 	background-color: #FBFEFF
+	color: #314B60;
+}
+
+.menu .menu a.menuNode:hover, .menu .menu a.menuNode:focus {
+	background-color: #fff;
+}
+
+
+.AnimTree {
+	position: absolute;
+	overflow: auto;
+	top: 0;
+
+	background-color: transparent;
+	padding-top: 12px;
+
+	width: 197px;
+	height: 340px;
+ }
+
+
+/* *-*-*-*- *-*-*-*- *-*-*-*         End Menu tree rules        *-*-*-*- *-*-*-*- *-*-*-*- 
+*                                   ___________________                                */
+
+/****************************************************************************
+			 tabs
+*****************************************************************************/
+
+div.content {
+	position: absolute;
+	background: #fdfdff;
+}
+
+#leftNavTabSystem {
+	background: transparent;
+	height: 580px;
+}
+
+#leftNavTabSystem div.tabs{
+	position: absolute;
+	top: 151px;
+ 	left: 12px;
+	
+	height: 22px;
+	white-space: nowrap;
+	cursor: default !important;
+	font-size: 12px;
+		
+	font-family: arial, sans-serif;
+	font-weight: 700 !important;
+	white-space: nowrap;
+	z-index:10000;	
+}
+
+.tab {
+	position: relative;
+	border: 0;
+}
+.tabHover, .tab:hover{
+	position:relative;
+	top: 0px;
+	border: 0;
+}
+
+.tabActive, .tab:focus, .tabActive:hover{
+	top: 1px;
+}
+
+
+#leftNavTabSystem .content {
+	position: absolute;
+	margin-top: 156px;
+	top: 15px;
+	border: 1px solid #E6F4FF;
+	border-top-color: #314B60;
+	background: #E1F1FF;
+}
+
+h2 {
+	text-align: center;
+	font-family: Trebuchet MS;
+}
+
+#contents {
+	background-color: #fdfdff;
+	font-family: "Trebuchet MS", tahoma, sans-serif;
+	color: #000;
+	position: absolute;
+	top: 104px;
+	left: 198px;
+	height: auto;
+	width: 560px;
+	padding: 20px;
+	border: 1px solid #666;
+}
+
+
+
+/* *-*-*-*- *-*-*-*- *-*-*-*-        @media print rules        *-*-*-*- *-*-*-*- *-*-*-*- 
+*                                   __________________                                 */
+@media print {
+
+	#nav {
+		width: 0;
+		height: 0;
+		padding: 0px;
+		margin: 0;
+		display: none;
+	}
+
+}

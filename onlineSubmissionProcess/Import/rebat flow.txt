@@ -1,0 +1,9 @@
+1. buat skrin verifikasi_kibfg
+   check jika dalam table bukan kibfg takde dan table kibfg takde..maknanya barcode tak sah
+   check dari table kibfg, jika takde dan ada dalam table bukan kibfg panggil form    online/isytihar_semula_kibfg(data baru)
+   kalau ada panggil form online/isytihar_semula_kibfg_view(macam isytihar semula)(untuk       edit)
+2. form berubah dalam online semua kibfg dan rpt kibfg
+3. buat dia pop up dulu senarai ikan yang belum rebat dan pilih mana nak rebat baru panggil     kibfg yang data baru
+   jika data dah ada tak perlu listkan(utk edit saja)
+4. betulkan semua report berkaitan...
+5. buat menu utk rebat

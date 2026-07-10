@@ -1,0 +1,82 @@
+<script language="javascript" type="text/javascript">
+function checkDecimal(theForm,fd,fdName)
+{
+ eval("doc=document."+ theForm);
+ str=eval("doc." + fd + ".value");
+ if(str.length==0){
+   eval("doc." + fd + ".value=''");
+   return true;
+ }
+ else
+ {
+  str=str.split(" ");
+  str=str.join("");
+ }
+ //alert("a"+str+"a");
+ for(var i=0;i<str.length;i++){
+  ch=str.charAt(i);//alert("ch=" + ch + "   i=" + i);
+  if(ch!='0' && ch!='1' && ch!='2' && ch!='3' && ch!='4' && ch!='5' && ch!='6' && ch!='7' && ch!='8' && ch!='9' && ch!='.'){
+   alert("The value in the " + fdName + " field must be numbers!");
+
+   eval("doc." + fd + ".value=''");
+   nilai=0;
+   eval("doc." + fd + ".focus()");
+   return false;
+  }
+ }
+ //eval("doc." + fd + ".value=centPlace(doc." + fd + ".value)");
+ return true;
+}
+
+
+function checkNumber(theform,fd,fdName)
+{
+ eval("doc=document."+ theform);
+ str=eval("doc." + fd + ".value");
+ if(str.length==0){
+  eval("doc." + fd + ".value=''");
+  return true;
+ }
+ for(var i=0;i<str.length;i++){
+  ch=str.charAt(i)
+  if(ch!='0' && ch!='1' && ch!='2' && ch!='3' && ch!='4' && ch!='5' && ch!='6' && ch!='7' && ch!='8' && ch!='9'){
+   alert("The value in the " + fdName + " field must be numbers!");
+   eval("doc." + fd + ".value=''");
+   nilai=0;
+   eval("doc." + fd + ".focus()");
+   return false;
+  }
+ }
+
+ return true;
+}
+
+
+
+
+
+function centPlace(num)
+{
+ num="" + num;
+ d=num.split('.');
+ c="0." + d[1];
+ c=parseFloat(c);
+ cent=Math.round(c * 100);
+ cent="" + cent;
+ if(cent.length==1) cent="0" + cent;
+ v=d[0] + "." + cent;
+ return v;
+}
+
+function formatNumber(fd)
+{
+ doc=document.borang;
+ a=eval("doc." + fd + ".value");
+ eval("doc." + fd + ".value=centPlace(a)");
+}
+
+</script>
+
+
+
+

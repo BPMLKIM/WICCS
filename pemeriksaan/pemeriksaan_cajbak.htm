@@ -1,0 +1,255 @@
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="pemeriksaan_caj.aspx.vb" Inherits="pemeriksaan_pemeriksaan_caj" %>
+
+<%@ Register Assembly="Microsoft.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="Microsoft.Web.UI" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>[WICCS]PEMERIKSAAN</title>
+    <link href="../css/stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script language="javascript" type="text/javascript">
+
+    function selection_item()
+    
+    {
+        var a = document.form1.DropDownList1.value
+        var b =  a.split(';');
+        var i =0;    
+        
+        var dataItem4 = document.all.Exporter;
+                
+        for(i=0;i<b.length;i++)
+            {
+                document.form1.TextBox2.value = b[3]
+                document.form1.TextBox1.value = b[1]
+                document.all.DropDownList2.options[document.all.DropDownList2.selectedIndex].text = b[2]
+                document.form1.TextBox3.value = b[0]       
+            }                  
+    }
+
+
+    function Tambah()
+ 
+        {
+            document.form1.arrayVal.value = document.form1.arrayVal.value + document.form1.TextBox3.value 
+            + '`' + document.form1.TextBox1.value + '`' + document.all.DropDownList2.options[document.all.DropDownList2.selectedIndex].text + '`' + document.form1.TextBox2.value + '~';
+    
+            //add a row to the rows collection and get a reference to the newly added row
+
+	        var newRow = document.all("Table1").insertRow();	
+	        //newRow.attachEvent("onclick", makeEventFunc('#c9cc99','cc3333'));
+	        //newRow.bgColor="#c9cc99";
+	
+	        var oCell = newRow.insertCell();	
+    	    
+	        var strTemp=document.all.DropDownList1.options.value;
+	        var arrTemp=strTemp.split(";");
+	        var myString = document.form1.TextBox3.value 
+            + '`' + document.form1.TextBox1.value + '`' + document.all.DropDownList2.options[document.all.DropDownList2.selectedIndex].text + '`' + document.form1.TextBox2.value + '~';
+	        alert(myString);
+    	    
+	        oCell.innerHTML = "<input name=\"checkbox\" type=\"checkbox\" value=\""+ myString +"\" />";
+            oCell = newRow.insertCell();
+	        oCell.innerHTML = arrTemp[0];
+	        oCell = newRow.insertCell();
+	        oCell.innerHTML =arrTemp[1];	
+	        oCell = newRow.insertCell();
+	        oCell.innerHTML = arrTemp[2];	
+	        oCell = newRow.insertCell();
+	        oCell.innerHTML = arrTemp[3];
+	       
+	    //end of new row inserted	      
+
+      }
+
+
+
+function Tolak()
+{
+var dataItem = document.form1.items;
+var myString;
+var strReplace;
+var elementsName;
+
+if(document.form1.checkbox.length>1)
+{
+   // alert(document.form1.checkbox.length)
+	for (i=0;i<document.form1.checkbox.length;i++)
+	{
+		myString = document.form1.arrayVal.value;
+		elementsName="checkbox" + String(i);
+		//alert(elementsName);
+		if(document.form1.checkbox(i).checked)
+		{
+		//alert(elementsName);
+	   	strReplace = document.form1.checkbox(i).value;
+	   	alert(strReplace);
+	   	document.form1.arrayVal.value=myString.replace(strReplace,"");
+		}
+		refreshTableGridImporter();
+	}//end for
+	
+	//refreshTableGridImporter();
+}
+else
+{
+ 	if(document.form1.checkbox.checked)
+	{
+	   myString = document.form1.arrayVal.value;
+	   strReplace = document.form1.checkbox.value;
+	   document.form1.arrayVal.value=myString.replace(strReplace,"");
+	   //refreshTableGridImporter();   
+	} 
+	
+}
+
+}
+
+
+function refreshTableGridImporter()
+{
+    
+    var totalRows;
+    
+    if (document.all("Table1").rows.length==undefined)
+    {
+        totalRows=-1;
+    }
+    else
+    {
+        totalRows=document.all("Table1").rows.length;
+    }
+       
+      //clear tables rows for current importer fish declaration    
+    var i=0;
+    for(i=1;i<totalRows;i++)
+    {
+        document.all("Table1").deleteRow(1);
+    }        
+    
+ 
+}      
+
+
+
+
+</script>
+
+
+<body>
+    <form id="form1" runat="server">
+    <div style="border-right: #333333 1px ridge; padding-right: 1px;
+                        border-top: #ffffff 1px ridge; padding-left: 1px; font-size: 10px; padding-bottom: 1px;
+                        border-left: #ffffff 1px ridge; color: #000000; padding-top: 1px; border-bottom: #000000 1px ridge;
+                        font-family: MS Shell Dlg,verdana,??; background-color: #f1f1f1">
+        <br />
+        <br />
+        <table width="90%">
+            <tr  style="height: 15px;">
+                <td align="left" colspan="2" style="height: 11px" valign="top" ;>
+                    <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="Pengistiharaan Caj Lain"
+                        Width="208px"></asp:Label></td>
+            </tr>
+            <tr>
+                <td align="left" style="width: 179px; height: 5px" valign="top">
+                </td>
+                <td align="left" style="width: 619px; height: 5px" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="width: 179px; height: 5px" valign="top">
+                </td>
+                <td align="left" style="width: 619px; height: 5px" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="width: 179px; height: 5px" valign="top">
+                </td>
+                <td align="left" style="width: 619px; height: 5px" valign="top">
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="width: 179px; height: 5px" valign="top">
+                    &nbsp;Pembayaran Caj</td>
+                <td align="left" style="width: 619px; height: 5px" valign="top">
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1"
+                        DataTextField="Nama_Caj" DataValueField="Kod_Caj" OnClick="selection_item();">
+                    </asp:DropDownList>
+                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:W-ICCS_Conn %>"
+                        SelectCommand="SELECT Nama_Caj + ';' + CAST(Kadar_Caj AS varchar) + ';' + Cara_Pembayaran + ';' + Dicaj_Oleh AS 'Kod_Caj', Nama_Caj FROM CAJ_PERKHIDMATAN">
+                    </asp:SqlDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 179px; height: 15px">
+                    &nbsp;Nilai Caj</td>
+                <td style="width: 619px; height: 15px">
+                    <asp:TextBox ID="TextBox1" runat="server" ReadOnly="True"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td style="width: 179px; height: 15px">
+                    &nbsp;Cara Pembayaran</td>
+                <td style="width: 619px; height: 15px">
+                    <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:ListItem Selected="True">Tunai</asp:ListItem>
+                        <asp:ListItem>Cek</asp:ListItem>
+                    </asp:DropDownList></td>
+            </tr>
+            <tr>
+                <td style="width: 179px; height: 15px">
+                    &nbsp;Dicaj Oleh</td>
+                <td style="width: 619px; height: 15px">
+                    <asp:TextBox ID="TextBox2" runat="server" ReadOnly="True"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td style="width: 179px; height: 15px">
+                </td>
+                <td style="width: 619px; height: 15px">
+                    <input id="Button1" runat="server" style="border-right: #333333 1px ridge; padding-right: 1px;
+                        border-top: #ffffff 1px ridge; padding-left: 1px; font-size: 10px; padding-bottom: 1px;
+                        border-left: #ffffff 1px ridge; color: #000000; padding-top: 1px; border-bottom: #000000 1px ridge;
+                        font-family: MS Shell Dlg,verdana,??; background-color: #f1f1f1" type="button"
+                        value="TAMBAH" onClick="Tambah();" /><input id="Button5" runat="server" style="border-right: #333333 1px ridge;
+                            padding-right: 1px; border-top: #ffffff 1px ridge; padding-left: 1px; font-size: 10px;
+                            padding-bottom: 1px; border-left: #ffffff 1px ridge; color: #000000; padding-top: 1px;
+                            border-bottom: #000000 1px ridge; font-family: MS Shell Dlg,verdana,??; background-color: #f1f1f1"
+                            type="button" value="BATAL" onClick="Tolak();" /></td>
+            </tr>
+        </table>
+        <br />
+        &nbsp;<asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Caj-Caj Yang Dikenakan"
+            Width="184px"></asp:Label><br />
+        &nbsp;<asp:TextBox ID="arrayVal" runat="server" Width="648px"></asp:TextBox>
+        <br />
+        <br />
+        <table style="width: 700px" id="Table1">
+            <tr>
+                <td style="width: 26px; height: 14px">
+                </td>
+                <td style="width: 192px; height: 14px">
+                    Item</td>
+                <td style="width: 86px; height: 14px">
+                    Caj (RM)</td>
+                <td style="width: 100px; height: 14px">
+                    Cara Pembayaran</td>
+                <td style="height: 14px; width: 160px;">
+                    DiCaj Oleh</td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <br />
+    </div>
+    </form>
+
+<script language="javascript" type="text/javascript">
+    refreshTableGridImporter() 
+</script>   
+
+</body>
+</html>

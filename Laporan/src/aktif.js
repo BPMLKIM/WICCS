@@ -1,0 +1,25 @@
+d = new dTree('d');
+d.config.closeSameLevel=true;
+d.config.useIcons=false;
+d.config.folderLinks = false;
+d.add(0,-1,'');
+d.add(1,0,'Laporan Keaktifan','');		
+d.add(2,1,'Import','');		
+d.add(3,2,'Laporan Keaktifan Import Ikan Mengikut Pengimport dan Bentuk Ikan/Produk (SPSB 03a(1i)(I) - Pengimport)','Papar_Pilihan.aspx?id=35&RptH=SPSB03(A)1_IPI.rpt&RptB=SPSB03(A)1_IPI.rpt&RptT=SPSB03(A)1_IPI.rpt');		
+d.add(4,2,'Laporan Keaktifan Import Ikan Mengikut Pengeksport Luar dan Bentuk Ikan/Produk (SPSB 03a(1e)(I) - Pengeksport)','Papar_Pilihan.aspx?id=36&RptH=SPSB03(A)1_IPE.rpt&RptB=SPSB03(A)1_IPE.rpt&RptT=SPSB03(A)1_IPE.rpt');		
+d.add(5,2,'Laporan Keaktifan Import Ikan Mengikut Pengimport  (SPSB 04c(1i(I) - Pengimport)','Papar_Pilihan.aspx?id=37&RptH=SPSB04C1_IPI.rpt&RptB=SPSB04C1_IPI.rpt&RptT=SPSB04C1_IPI.rpt');		
+d.add(6,2,'Laporan Keaktifan Import Ikan Mengikut Pengeksport (SPSBN 04c(1e)(I) - Pengeksport)','Papar_Pilihan.aspx?id=38&RptH=SPSB04C1_IPE.rpt&RptB=SPSB04C1_IPE.rpt&RptT=SPSB04C1_IPE.rpt');		
+d.add(7,2,'Laporan Keaktifan Import Ikan Mengikut Agen Pengangkutan (SPSB 07(I)) ','Papar_Pilihan.aspx?id=39&RptH=SPSB07_I.rpt&RptB=SPSB07_I.rpt&RptT=SPSB07_I.rpt');		
+d.add(8,2,'Laporan Keaktifan Import Udang Mengikut Pengimport (SPSB 25(I)) ','Papar_Laporan_Harian.aspx?id=40&RptH=SPSB25I.rpt&RptB=SPSB07_I.rpt&RptT=SPSB07_I.rpt');		
+d.add(9,2,'Laporan Keaktifan Import Ikan Mengikut Pengimport (SPSB_I - Pengimport)','Papar_Pilihan.aspx?id=34&RptH=SPSB_I.rpt&RptB=SPSB_I.rpt&RptT=SPSB_I.rpt');		
+d.add(10,2,'Laporan Keaktifan Import Ikan Mengikut Pengeksport Luar (SPSB_I_E - Pengeksport)','Papar_Pilihan.aspx?id=34.5&RptH=SPSB_I_E.rpt&RptB=SPSB_I_E.rpt&RptT=SPSB_I_E.rpt');		
+d.add(11,1,'Eksport','');		
+d.add(12,11,'Laporan Keaktifan Eksport Ikan Mengikut Pengimport Luar dan Bentuk Ikan/Produk (SPSB 03a(1e)(E) - Pengeksport)','Papar_Pilihan.aspx?id=41&RptH=SPSB03(A)1_EPI.rpt&RptB=SPSB03(A)1_EPI.rpt&RptT=SPSB03(A)1_EPI.rpt');		
+d.add(13,11,'Laporan Keaktifan Eksport Ikan Mengikut Pengeksport dan Bentuk Ikan/Produk (SPSB 03a(1i)(E) - Pengimport)','Papar_Pilihan.aspx?id=42&RptH=SPSB03(A)1_EPE.rpt&RptB=SPSB03(A)1_EPE.rpt&RptT=SPSB03(A)1_EPE.rpt');		
+d.add(14,11,'Laporan Keaktifan Eksport Ikan Mengikut Pengimport (SPSB 04c(1e(E) - Pengeksport)','Papar_Pilihan.aspx?id=43&RptH=SPSB04C1_EPI.rpt&RptB=SPSB04C1_EPI.rpt&RptT=SPSB04C1_EPI.rpt');		
+d.add(15,11,'Laporan Keaktifan Eksport Ikan Mengikut Pengeksport (SPSBN 04c(1i)(E) - Pengimport)','Papar_Pilihan.aspx?id=44&RptH=SPSB04C1_EPE.rpt&RptB=SPSB04C1_EPE.rpt&RptT=SPSB04C1_EPE.rpt');		
+d.add(16,11,'Laporan Keaktifan Eksport Ikan Mengikut Agen Pengangkutan (SPSB 07(E)) ','Papar_Pilihan.aspx?id=45&RptH=SPSB07_E.rpt&RptB=SPSB07_E.rpt&RptT=SPSB07_E.rpt');		
+d.add(17,11,'Laporan Keaktifan Eksport Ikan Mengikut Pengimport Luar (SPSB_E_I - Pengeksport)','Papar_Pilihan.aspx?id=42.8&RptH=SPSB_E_I.rpt&RptB=SPSB_E_I.rpt&RptT=SPSB_E_I.rpt');		
+d.add(18,11,'Laporan Keaktifan Eksport Ikan Mengikut Pengeksport (SPSB_E - Pengimport)','Papar_Pilihan.aspx?id=42.5&RptH=SPSB_E.rpt&RptB=SPSB_E.rpt&RptT=SPSB_E.rpt');		
+
+document.write(d);
