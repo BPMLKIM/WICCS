@@ -1,0 +1,106 @@
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="pengeksportm_new_lkim_user.aspx.vb" Inherits="UserManagement_LKIM_new_lkim_user" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>W-ICCS Daftar Pengguna Baru LKIM</title>
+    <link href="css/bhea2.css" rel="stylesheet" type="text/css" />
+     <script language="javascript" src="popcalendar.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+  <div> 
+    <table border="0" cellpadding="0" cellspacing="0" width="938">
+      <tr> 
+        <td width="27%" style="height: 13px">MODUL  MENYUNTING MAKLUMAT </td>
+        <td width="73%" bgcolor="#006699" style="height: 13px">&nbsp;</td>
+      </tr>
+    </table>
+    <table style="width: 570px">
+            <tr>
+                <td colspan="3">
+                    <span style="font-size: 10pt; font-family: Arial Black">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
+                        <span style="font-family: Arial"></span></span>
+                </td>
+            </tr>
+        </table>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="22%"><font color="#333333"><strong>Maklumat </strong><span style="color: #000000">pengeksport 
+          malaysia</span></font> </td>
+        <td width="15%">&nbsp;</td>
+        <td width="63%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr> 
+        <td>Kod pengeksport malaysia</td>
+        <td><asp:textbox ID="textbox1" runat="server" Width="200px">055</asp:textbox></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr> 
+        <td>Nama Syarikat</td>
+        <td><asp:textbox ID="textbox2" runat="server" Width="200px" MaxLength="50"></asp:textbox></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr> 
+        <td>Alamat pengeksport malaysia</td>
+        <td><asp:textbox ID="TextBox3" runat="server" Width="200px" MaxLength="250"></asp:textbox></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr> 
+        <td>No lesen</td>
+        <td><asp:textbox ID="TextBox4" runat="server" Width="200px"></asp:textbox></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr> 
+        <td>Tarikh dimasukkan</td>
+        <td><asp:textbox ID="TextBox5" runat="server" Width="200px"></asp:textbox></td>
+        <td><input id="calender" runat="server" class="textbox" name="choose2" onclick="popUpCalendar(this, TextBox5, 'm/d/yyyy')"
+                      style="border-left-color: white; background-image: url(calendar.jpg); border-bottom-color: white;
+                      width: 15px; cursor: hand; border-top-style: none; border-top-color: white; border-right-style: none;
+                      border-left-style: none; height: 18px; background-color: white; border-right-color: white;
+                      border-bottom-style: none" type="button" value=" " visible="true" /></td>
+      </tr>
+      <tr> 
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+   
+   
+        &nbsp;<asp:Button ID="NewUser" runat="server" Style="border-right: #333333 1px ridge;
+            padding-right: 1px; border-top: #ffffff 1px ridge; padding-left: 1px; font-size: 10px;
+            padding-bottom: 1px; border-left: #ffffff 1px ridge; color: #000000; padding-top: 1px;
+            border-bottom: #000000 1px ridge; font-family: MS Shell Dlg,verdana,??; background-color: #f1f1f1"
+            Text="Simpan" /><input id="Button1" onclick="location.href='pengeksportm.aspx'" style="border-right: #333333 1px ridge;
+            padding-right: 1px; border-top: #ffffff 1px ridge; padding-left: 1px; font-size: 10px;
+            padding-bottom: 1px; border-left: #ffffff 1px ridge; color: #000000; padding-top: 1px;
+            border-bottom: #000000 1px ridge; font-family: MS Shell Dlg,verdana,??; background-color: #f1f1f1"
+            type="button" value="Papar" />&nbsp;<br />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="textbox1"
+            Display="None" ErrorMessage="kod pengeksport malaysia"></asp:RequiredFieldValidator>
+      &nbsp; &nbsp;
+        &nbsp;&nbsp;<br />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="Maklumat Berikut Wajib Diisi "
+            ShowMessageBox="True" ShowSummary="False" />
+    
+    </div>
+    </form>
+</body>
+</html>

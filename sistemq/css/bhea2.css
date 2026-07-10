@@ -1,0 +1,248 @@
+BODY {
+	FONT-SIZE: 11px; FONT-FAMILY: Tahoma, Sans-serif
+}
+A {
+	COLOR: #003366;  TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #FF0000; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #ff6347; TEXT-DECORATION: underline
+}
+A.myapps {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Tahoma,Arial,Verdana
+}
+A.myapps:visited {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Tahoma,Arial,Verdana
+}
+A.myapps:hover {
+	FONT-SIZE: 8pt; COLOR: yellow; FONT-FAMILY: Tahoma,Arial,Verdana; BACKGROUND-COLOR: crimson
+}
+
+A.myapps3 {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Tahoma,Arial,Verdana
+}
+A.myapps3:visited {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Tahoma,Arial,Verdana
+}
+A.myapps3:hover {
+	FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: Tahoma,Arial,Verdana; BACKGROUND-COLOR: blue
+}
+
+A.myapps2 {
+	FONT-SIZE: 8pt; COLOR: #FF0000; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: none
+}
+A.myapps2:visited {
+	FONT-SIZE: 8pt; COLOR: #FF0000; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: none
+}
+A.myapps2:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: crimson; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: underline
+}
+A.myvisit:visited {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: none
+}
+A.myvisit:hover {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: underline
+}
+A.myvisit {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: none
+}
+A.myvisit:hover {
+	FONT-SIZE: 8pt; COLOR: black; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: underline
+}
+A.hapus:visited {
+	FONT-SIZE: 8pt; COLOR: #dc143c; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: none
+}
+A.hapus:hover {
+	FONT-SIZE: 8pt; COLOR: lime; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: underline
+}
+A.hapus {
+	FONT-SIZE: 8pt; COLOR: #dc143c; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: none
+}
+A.kemaskini:visited {
+	FONT-SIZE: 8pt; COLOR: navy; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: none
+}
+A.kemaskini:hover {
+	FONT-SIZE: 8pt; COLOR: lime; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: underline
+}
+A.kemaskini {
+	FONT-SIZE: 8pt; COLOR: navy; FONT-FAMILY: Tahoma,Arial,Verdana; TEXT-DECORATION: none
+}
+INPUT {
+	FONT-SIZE: 10px; COLOR: #000066; FONT-FAMILY: "MS Sans Serif", Geneva, sans-serif; valign:middle;
+}
+INPUT.ch {
+	FONT-SIZE: 12px; COLOR: navy; FONT-FAMILY: "MS Sans Serif", Geneva, sans-serif; BACKGROUND-COLOR: #d6e7ef
+}
+TEXTAREA.newtext {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: "MS Sans Serif", Geneva, sans-serif; BACKGROUND-COLOR: #ebebeb
+}
+INPUT.pinj {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: "MS Sans Serif", Geneva, sans-serif; BACKGROUND-COLOR: #ebebeb
+}
+INPUT.time {
+	FONT-SIZE: 10px; COLOR: white; BORDER-TOP-STYLE: none; FONT-STYLE: normal; FONT-FAMILY: tahoma,sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: #666666; BORDER-BOTTOM-STYLE: none; layer-background-color: White
+}
+SELECT.pinj {
+	BORDER-RIGHT: #104a7b 0px solid; BORDER-TOP: #afc4d5 0px solid; FONT-SIZE: 12px; BORDER-LEFT: #afc4d5 0px solid; COLOR: black; BORDER-BOTTOM: #104a7b 0px solid; FONT-FAMILY: MS Sans Serif, Geneva, sans-serif; BACKGROUND-COLOR: #ebebeb; TEXT-DECORATION: none
+}
+SELECT {
+	BORDER-RIGHT: #104a7b 1px solid; BORDER-TOP: #afc4d5 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #afc4d5 1px solid; COLOR: #000066; BORDER-BOTTOM: #104a7b 1px solid; FONT-FAMILY: MS Sans Serif, Geneva, sans-serif; BACKGROUND-COLOR: #d6e7ef; TEXT-DECORATION: none
+}
+TABLE {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: 11px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: tahoma,sans-serif
+}
+TABLE.outer {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TABLE.outer4 {
+	BORDER-RIGHT: #ffcc33 1px solid; BORDER-TOP: #ffcc33 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #ffcc33 1px solid; BORDER-BOTTOM: #ffcc33 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TABLE.white {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TD.mywhite {
+	BORDER-TOP: silver 1px solid; FONT-SIZE: 11px; BORDER-BOTTOM: silver 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TD.mywhite2 {
+	FONT-SIZE: 11px; BORDER-BOTTOM: silver 1px solid; FONT-FAMILY: tahoma,sans-serif; TEXT-DECORATION: underline; FONT-COLOR: Red
+}
+TD.mygold {
+	BORDER-TOP: palegoldenrod 1px solid; FONT-SIZE: 11px; BORDER-BOTTOM: palegoldenrod 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TD.myapple {
+	BORDER-TOP: #ccff99 1px solid; FONT-SIZE: 11px; BORDER-BOTTOM: #ccff99 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TD.mythumb {
+	FONT-SIZE: 11px; BORDER-LEFT: silver 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TD.outer3 {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TABLE.outer5 {
+	BORDER-RIGHT: #0066cc 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #003366 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TABLE.outer3r {
+	FONT-SIZE: 11px; BORDER-LEFT: silver 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+TABLE.outer2 {
+	BORDER-RIGHT: silver 1px solid; BORDER-TOP: silver 1px solid; FONT-SIZE: 11px; FONT-FAMILY: tahoma,sans-serif
+}
+TABLE.outer3 {
+	BORDER-RIGHT: silver 1px solid; FONT-SIZE: 11px; FONT-FAMILY: tahoma,sans-serif
+}
+.drpdwn {
+	FONT-SIZE: 11px; COLOR: #000066; FONT-FAMILY: tahoma,san-serif; BACKGROUND-COLOR: #d6e7ef
+}
+TABLE.Mtable TD {
+	BORDER-BOTTOM: #93bee2 1px solid
+}
+.Mtable2 {
+	BORDER-RIGHT: #0099cc 1px solid; BORDER-TOP: #0099cc 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #afc4d5 1px solid; BORDER-BOTTOM: #0099cc 1px solid; FONT-FAMILY: tahoma,sans-serif
+}
+.button {
+	FONT-SIZE: 11px; BACKGROUND: #99ccff; CURSOR: hand; COLOR: silver; FONT-FAMILY: tahoma,sans-serif
+}
+.msgrunner {
+	FONT-SIZE: 8px; COLOR: maroon; FONT-FAMILY: Verdana
+}
+.pushbutton {
+	FONT-SIZE: 11px; BACKGROUND: #d6e7ef; CURSOR: hand; COLOR: #003366; FONT-FAMILY: tahoma,arial,sans-serif
+}
+.TDdataS {
+	BORDER-RIGHT:1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid;BORDER-COLOR:#FFCCCC;  1px PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-FAMILY: verdana; FONT-SIZE: 10px; PADDING-BOTTOM: 1px; VERTICAL-ALIGN: top; COLOR: #333333; PADDING-TOP: 1px;
+}
+.TDdataSM {
+	BORDER-BOTTOM: 1px solid;BORDER-COLOR:#FFCCCC;  1px PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-FAMILY: verdana; FONT-SIZE: 10px; PADDING-BOTTOM: 1px; VERTICAL-ALIGN: top; COLOR: #333333; PADDING-TOP: 1px;
+}
+.TDdataSA {
+	BORDER-RIGHT:1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-COLOR:#FFCCCC; FONT-FAMILY: verdana; FONT-SIZE: 10px; VERTICAL-ALIGN: top; COLOR: #333333;
+}
+
+.TDdata {
+	BORDER-RIGHT:0px solid; BORDER-TOP: 0px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid;BORDER-COLOR:#FFCCCC;  1px PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; VERTICAL-ALIGN: top; COLOR: #333333; PADDING-TOP: 1px
+}
+.TDdataSAM {
+	BORDER-RIGHT:1.5px solid; BORDER-TOP: 1.5px solid; BORDER-LEFT: 1.5px solid; BORDER-BOTTOM: 1.5px solid;BORDER-COLOR:#eeeeee; FONT-FAMILY: verdana; FONT-SIZE: 11px; VERTICAL-ALIGN: top; COLOR: #333333;
+}
+
+.TDClock {
+	FONT-FAMILY: arial; FONT-SIZE: 7.5pt; COLOR: #BBF300 ; width: 300px;
+}
+.inputtext {
+	BORDER-RIGHT:1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLOR:#FFCCCC; FONT-SIZE: xx-small; FONT-FAMILY: MS Sans Serif; font-color: #666666; BACKGROUND-COLOR: #FFFFFF; BORDER-STYLE:solid;}
+.inputtext2 {
+	BORDER-RIGHT:1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLOR:#003366; FONT-SIZE: xx-small; FONT-FAMILY: MS Sans Serif; font-color: #666666; BACKGROUND-COLOR: #FFFFFF; BORDER-STYLE:solid;}
+.inputtext2x {
+	BORDER-RIGHT:1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; BORDER-COLOR:#666666; FONT-SIZE: xx-small; FONT-FAMILY: MS Sans Serif; font-color: #666666; BACKGROUND-COLOR: #eeeeee; BORDER-STYLE:solid;}
+
+
+.tdheader { 
+	BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; FONT-SIZE: 8pt; COLOR: #FF0000; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none }
+.tdheader2 { 
+	BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; FONT-SIZE: 8pt; COLOR: #FF0000; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-LEFT: #000000 1px solid; }	
+.tdheaderResult { 
+	BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none }
+.tdheaderResult2 { 
+	BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-LEFT: #000000 1px solid; }	
+.tdheaderX { 
+	BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; BORDER-LEFT: #000000 1px solid; FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-BOTTOM: #000000 1px solid; }
+THEAD TD {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonhighlight 1px solid; BACKGROUND: buttonface; BORDER-LEFT: buttonhighlight 1px solid; CURSOR: default; PADDING-TOP: 1px; BORDER-BOTTOM: buttonshadow 1px solid; HEIGHT: 18px
+}
+.tdheaderX2 { 
+	BORDER-TOP: #000000 2px solid; FONT-SIZE: 8pt; COLOR: #FF0000; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-BOTTOM: #000000 2px solid; }
+.tdheaderXA { 
+FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-BOTTOM: #666666 1px solid; }
+.tdheaderXAC { 
+BORDER-LEFT: #666666 1px solid;FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none; }
+.tdheaderXAD { 
+BORDER-LEFT: #666666 1px solid;FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-BOTTOM: #666666 1px solid; }
+.tdheaderXB { 
+FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-RIGHT: #666666 1px solid; }
+.tdheaderXBC { 
+FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-RIGHT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid; }
+.tdheaderXM { 
+	BORDER-TOP: #FFCC66 1px solid; BORDER-RIGHT: #FFCC66 1px solid; BORDER-LEFT: #FFCC66 1px solid; FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-BOTTOM: #FFCC66 1px solid; }
+.tdheaderXAF { 
+BORDER-LEFT: #666666 1px solid;FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-TOP: #666666 1px solid; }	
+.tdheaderXAG { 
+BORDER-RIGHT: #666666 1px solid;FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-TOP: #666666 1px solid; }
+.tdheaderXAT { 
+FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-TOP: #666666 1px solid; }
+.tdheaderXAM { 
+BORDER-LEFT: #666666 1px solid;FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none; BORDER-RIGHT: #666666 1px solid;}
+.tdheaderXAM2 { 
+BORDER-LEFT: #666666 1px solid;BORDER-BOTTOM: #666666 1px solid;FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none; BORDER-RIGHT: #666666 1px solid;}
+.tdheaderXAM2L { 
+BORDER-LEFT: #666666 1px solid;BORDER-TOP: #666666 1px solid;FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none; BORDER-RIGHT: #666666 1px solid;}
+.tdheaderResultM { 
+	BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none }
+.tdheaderResultM2 { 
+	BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-LEFT: #000000 1px solid; }
+.tdheaderResultM2x { 
+	BORDER-TOP: #000000 2px solid; BORDER-BOTTOM: #000000 2px solid; FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none; }
+.tdheaderXAFR { 
+BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-TOP: #000000 1px solid; }
+.tdheaderXATR { 
+ BORDER-BOTTOM: #000000 1px solid; TEXT-DECORATION: none;}
+
+.tdheaderXAGR { 
+BORDER-RIGHT: #000000 1px solid;FONT-SIZE: 8pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-TOP: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; }
+.TDdata2 {
+	BORDER-RIGHT: buttonshadow 1px solid; BORDER-TOP: buttonhighlight 1px solid; BACKGROUND: buttonface; BORDER-LEFT: buttonhighlight 1px solid; CURSOR: default; PADDING-TOP: 1px; BORDER-BOTTOM: buttonshadow 1px solid; HEIGHT: 18px
+}
+
+.tds { 
+BORDER-LEFT: #999999 1.5px solid;FONT-SIZE: 8.5pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none;BORDER-TOP: #666666 2px solid; }
+.tds2 { 
+BORDER-LEFT: #999999 1.5px solid;FONT-SIZE: 8.5pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none; }
+.txtb {
+	font-family:Arial, sans-serif;
+	font-size: 11px;
+	line-height: 12px;
+	font-weight: bold;
+	color: #000033;
+.tds3 { 
+BORDER-BOTTOM: #999999 1.5px solid;FONT-SIZE: 8.5pt; FONT-FAMILY: tahoma,arial,sans-serif; TEXT-DECORATION: none; }				
