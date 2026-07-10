@@ -1,0 +1,360 @@
+ENHANCEMENT WICCS-KIBFG
+
+
+UNTUK IMPORT
+
+*CHANGES FORM
+import/pengisytiharan.aspx
+appcode/SQLOperation.vb
+
+import/v_pengisyitiharan.aspx---ni utk paparkan sahaja bila barcode dah wujud(belum ubah)
+
+
+------------------------------------------------------
+*NEW FORM
+import/pengisytiharan_baru.aspx
+import/eSKPI_KIBFG.aspx
+
+
+import/v_pengisyitiharan_KIBFG.aspx---ni untuk view kan sahaja setelah no barcode dah wujud(belum buat)
+
+
+----------------------------------------------------
+*NEW REPORT
+import/rpt/crSKPI_KIBFG.rpt
+rpt/crMasterSheetImport_Top_KIBFG.rpt
+
+----------------------------------------------
+
+
+
+
+
+**tambah table baru
+
+1.ikan_caj_kibfg
+
+select * into ikan_caj_kibfg from ikan_caj
+**update 2.50 jadi 1.00 dan 5.00 jadi 3.00
+
+
+-----
+2.PENGISYTIHARAN_I_KIBFG
+
+USE [W-ICCS]
+GO
+/****** Object:  Table [dbo].[PENGISYTIHARAN_I_KIBFG]    Script Date: 05/25/2009 10:44:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[PENGISYTIHARAN_I_KIBFG](
+	[No_Barcode] [varchar](20) NOT NULL,
+	[No_SKPI] [varchar](20) NOT NULL,
+	[Reference_no] [varchar](50) NULL,
+	[No_Daftar] [varchar](50) NULL,
+	[No_Kenderaan] [varchar](15) NOT NULL,
+	[Cara_Pengangkutan] [varchar](5) NOT NULL,
+	[Kod_Pengimport] [varchar](20) NOT NULL,
+	[Kod_Pengeksport] [varchar](20) NOT NULL,
+	[Tarikh_Isytihar] [datetime] NOT NULL CONSTRAINT [DF_PENGISYTIHARAN_I_KIBFG_Tarikh_Isytihar]  DEFAULT (getdate()),
+	[Masa_Isytihar] [datetime] NOT NULL CONSTRAINT [DF_PENGISYTIHARAN_I_KIBFG_Masa_Isytihar]  DEFAULT (getdate()),
+	[Kod_PPI] [char](5) NOT NULL,
+	[TotalPetiKecil] [float] NOT NULL,
+	[TotalKuantitiKecil] [float] NOT NULL,
+	[TotalPetiBesar] [float] NOT NULL,
+	[TotalKuantitiBesar] [float] NOT NULL,
+	[TotalPek] [float] NOT NULL,
+	[TotalEkor] [float] NOT NULL,
+	[TotalNilai] [float] NOT NULL,
+	[TotalCajIkan] [float] NOT NULL,
+	[Sumber_Bekalan] [char](5) NOT NULL,
+	[Status] [char](10) NOT NULL CONSTRAINT [DF_PENGISYTIHARAN_I_KIBFG_Status]  DEFAULT (0),
+	[Nama_Pegawai] [varchar](50) NULL,
+	[Transaction_Date] [datetime] NOT NULL CONSTRAINT [DF_PENGISYTIHARAN_I_KIBFG_Transaction_Date]  DEFAULT (getdate()),
+	[Nama_PemanduPindahan] [varchar](50) NULL,
+	[No_KenderaanPindahan] [varchar](10) NULL,
+	[Site_Code] [varchar](10) NOT NULL CONSTRAINT [DF_PENGISYTIHARAN_I_KIBFG_Site_Code]  DEFAULT ((1)),
+	[OnlineSend_By] [varchar](50) NULL,
+	[Kod_Urusan] [varchar](5) NULL,
+	[Kod_CajIkan_ID] [int] NULL,
+	[Nama_Pemandu] [varchar](200) NULL,
+	[No_Skpi_Lama] [varchar](20) NULL,
+ CONSTRAINT [PK_PENGISYTIHARAN_I_KIBFG] PRIMARY KEY CLUSTERED 
+(
+	[No_SKPI] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+
+
+
+
+-------
+3.ITEM_ISYTIHAR_I_KIBFG
+
+USE [W-ICCS]
+GO
+/****** Object:  Table [dbo].[ITEM_ISYTIHAR_I_KIBFG]    Script Date: 05/25/2009 10:40:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[ITEM_ISYTIHAR_I_KIBFG](
+	[Nombor_Barcode] [varchar](50) NOT NULL,
+	[No_SKPI] [varchar](50) NOT NULL,
+	[Bil_Item] [int] NOT NULL,
+	[Kod_Ikan] [char](10) NOT NULL,
+	[Destinasi_Pasar] [char](20) NULL,
+	[PetiKecil] [float] NULL,
+	[KuantitiKecil] [float] NULL,
+	[PetiBesar] [float] NULL,
+	[KuantitiBesar] [float] NULL,
+	[Pek] [float] NULL,
+	[Ekor] [float] NULL,
+	[Nilai] [float] NULL,
+	[Caj] [float] NULL,
+	[Site_Code] [varchar](10) NOT NULL CONSTRAINT [DF_ITEM_ISYTIHAR_I_KIBFG_Site_Code]  DEFAULT (1),
+	[Caj_Ikan_Id] [int] NULL,
+	[CajSvr] [float] NULL,
+	[No_Skpi_Lama] [varchar](50) NULL,
+ CONSTRAINT [PK_ITEM_ISYTIHAR_I_KIBFG] PRIMARY KEY CLUSTERED 
+(
+	[Nombor_Barcode] ASC,
+	[No_SKPI] ASC,
+	[Bil_Item] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+
+----
+4.NOSIRI_SKPI_KIBFG
+
+
+
+USE [W-ICCS]
+GO
+/****** Object:  Table [dbo].[NOSIRI_SKPI_KIBFG]    Script Date: 05/25/2009 11:06:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[NOSIRI_SKPI_KIBFG](
+	[noskpi] [int] IDENTITY(1590575,1) NOT NULL,
+	[no_barcode] [varchar](20) NOT NULL,
+	[kod_pengimport] [varchar](20) NOT NULL,
+	[status] [char](1) NOT NULL CONSTRAINT [DF_NOSIRI_SKPI_KIBFG_status]  DEFAULT ('A'),
+	[transaction_date] [datetime] NOT NULL CONSTRAINT [DF_NOSIRI_SKPI_KIBFG_transaction_date]  DEFAULT (getdate()),
+ CONSTRAINT [PK_NOSIRI_SKPI_KIBFG] PRIMARY KEY CLUSTERED 
+(
+	[noskpi] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+
+----
+5. P_ISYTIHAR_TRANSNO_KIBFG
+
+
+USE [W-ICCS]
+GO
+/****** Object:  Table [dbo].[P_ISYTIHAR_TRANSNO_KIBFG]    Script Date: 05/26/2009 17:46:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[P_ISYTIHAR_TRANSNO_KIBFG](
+	[trans_id] [int] IDENTITY(1,1) NOT NULL,
+	[no_barcode] [varchar](20) NOT NULL,
+	[trans_date] [datetime] NOT NULL CONSTRAINT [DF_P_ISYTIHAR_TRANSNO_KIBFG_trans_date]  DEFAULT (getdate()),
+ CONSTRAINT [PK_P_ISYTIHAR_TRANSNO_KIBFG] PRIMARY KEY CLUSTERED 
+(
+	[trans_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+---------
+6.no_siri_epermit_KIBFG
+
+
+USE [W-ICCS]
+GO
+/****** Object:  Table [dbo].[no_siri_epermit_KIBFG]    Script Date: 05/26/2009 18:13:27 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[no_siri_epermit_KIBFG](
+	[bil_siri] [bigint] IDENTITY(1,1) NOT NULL,
+	[no_barcode] [nvarchar](50) NULL,
+	[no_invois] [nvarchar](50) NULL,
+	[edate] [datetime] NULL,
+	[serial] [varchar](5) NULL,
+ CONSTRAINT [PK_no_siri_epermit_KIBFG] PRIMARY KEY CLUSTERED 
+(
+	[bil_siri] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+
+----
+7.EPERMIT_USER_MAINTENANCE_KIBFG
+
+
+USE [W-ICCS]
+GO
+/****** Object:  Table [dbo].[EPERMIT_USER_MAINTENANCE_KIBFG]    Script Date: 05/26/2009 18:15:46 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[EPERMIT_USER_MAINTENANCE_KIBFG](
+	[epermit_serial_no] [bigint] IDENTITY(1,1) NOT NULL,
+	[no_barcode] [varchar](50) NULL,
+	[nama_driver] [varchar](200) NULL,
+	[id_driver] [nvarchar](200) NULL,
+	[edate] [datetime] NULL,
+	[staff_id] [nvarchar](200) NULL,
+ CONSTRAINT [PK_EPERMIT_USER_MAINTENANCE_KIBFG] PRIMARY KEY CLUSTERED 
+(
+	[epermit_serial_no] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+
+----------------------------------------------
+*VIEW BARU
+1.All_Kadar_Caj_KIBFG
+
+USE [W-ICCS]
+GO
+/****** Object:  View [dbo].[All_Kadar_Caj_KIBFG]    Script Date: 05/21/2009 16:30:25 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[All_Kadar_Caj_KIBFG]
+AS
+SELECT     ID, Kadar_Peti_Kecil, Kadar_Peti_Besar, Kadar_Ekor, Kadar_Kuantiti
+FROM         dbo.COMPANY_IKAN_CAJ
+UNION
+SELECT     ID, Kadar_Peti_Kecil, Kadar_Peti_Besar, Kadar_Ekor, Kadar_Kuantiti
+FROM         dbo.IKAN_CAJ_KIBFG
+
+-------------------------
+
+2.v_GetMasterSheetCajBiasa_1 KIBFG
+
+USE [W-ICCS]
+GO
+/****** Object:  View [dbo].[v_GetMasterSheetCajBiasa_1]    Script Date: 05/21/2009 16:21:13 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[v_GetMasterSheetCajBiasa_1_KIBFG]
+AS
+SELECT     dbo.ITEM_ISYTIHAR_I.Nombor_Barcode, dbo.ITEM_ISYTIHAR_I.PetiKecil, dbo.ITEM_ISYTIHAR_I.PetiBesar, 
+                      ISNULL(dbo.All_Kadar_Caj_KIBFG.Kadar_Peti_Kecil, 0) AS Kadar_Peti_Kecil, ISNULL(dbo.All_Kadar_Caj_KIBFG.Kadar_Peti_Besar, 0) AS Kadar_Peti_Besar, 
+                      dbo.ITEM_ISYTIHAR_I.Caj_Ikan_Id, dbo.JENIS_IKAN.Kod_Kategori_Ikan, dbo.ITEM_ISYTIHAR_I.KuantitiKecil, dbo.ITEM_ISYTIHAR_I.KuantitiBesar, 
+                      dbo.ITEM_ISYTIHAR_I.Ekor, ISNULL(dbo.All_Kadar_Caj_KIBFG.Kadar_Ekor, 0) AS Kadar_Ekor, ISNULL(dbo.All_Kadar_Caj_KIBFG.Kadar_Kuantiti, 0) 
+                      AS Kadar_Kuantiti
+FROM         dbo.ITEM_ISYTIHAR_I INNER JOIN
+                      dbo.JENIS_IKAN ON dbo.JENIS_IKAN.Kod_Ikan = dbo.ITEM_ISYTIHAR_I.Kod_Ikan LEFT OUTER JOIN
+                      dbo.All_Kadar_Caj_KIBFG ON dbo.ITEM_ISYTIHAR_I.Caj_Ikan_Id = dbo.All_Kadar_Caj_KIBFG.ID
+
+
+------------
+3.v_MasterSheetTop_KIBFG
+
+
+USE [W-ICCS]
+GO
+/****** Object:  View [dbo].[v_MasterSheetTop_KIBFG]    Script Date: 05/26/2009 11:52:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[v_MasterSheetTop_KIBFG]
+AS
+SELECT     TOP (100) PERCENT dbo.ITEM_ISYTIHAR_I_KIBFG.Nombor_Barcode, dbo.PENGISYTIHARAN_I_KIBFG.Kod_Pengimport, dbo.PENGIMPORT.Nama_Syarikat_Import, 
+                      SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.PetiKecil) + SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.PetiBesar) AS PETI, SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.KuantitiKecil) 
+                      + SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.KuantitiBesar) AS KG, SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.Ekor) AS EKOR, SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.Caj) AS [CAJ(RM)], 
+                      dbo.KUMPULAN_IKAN.Nama_Kumpulan_Ikan, dbo.PENGIMPORT.No_Lesen, dbo.ITEM_ISYTIHAR_I_KIBFG.No_SKPI
+FROM         dbo.ITEM_ISYTIHAR_I_KIBFG INNER JOIN
+                      dbo.PENGISYTIHARAN_I_KIBFG ON dbo.ITEM_ISYTIHAR_I_KIBFG.No_SKPI = dbo.PENGISYTIHARAN_I_KIBFG.No_SKPI INNER JOIN
+                      dbo.PENGIMPORT ON dbo.PENGIMPORT.Kod_Pengimport = dbo.PENGISYTIHARAN_I_KIBFG.Kod_Pengimport INNER JOIN
+                      dbo.JENIS_IKAN ON dbo.JENIS_IKAN.Kod_Ikan = dbo.ITEM_ISYTIHAR_I_KIBFG.Kod_Ikan INNER JOIN
+                      dbo.KUMPULAN_IKAN ON dbo.KUMPULAN_IKAN.Kod_Kumpulan_Ikan = dbo.JENIS_IKAN.Kod_Kumpulan
+WHERE     (dbo.PENGISYTIHARAN_I_KIBFG.Status = 'A')
+GROUP BY dbo.ITEM_ISYTIHAR_I_KIBFG.Nombor_Barcode, dbo.PENGISYTIHARAN_I_KIBFG.Kod_Pengimport, dbo.PENGIMPORT.Nama_Syarikat_Import, 
+                      dbo.PENGIMPORT.No_Lesen, dbo.ITEM_ISYTIHAR_I_KIBFG.No_SKPI, dbo.KUMPULAN_IKAN.Nama_Kumpulan_Ikan
+ORDER BY dbo.PENGISYTIHARAN_I_KIBFG.Kod_Pengimport
+
+
+----
+
+4.v_MasterSheetBottom_KIBFG
+
+
+
+USE [W-ICCS]
+GO
+/****** Object:  View [dbo].[v_MasterSheetBottom_KIBFG]    Script Date: 05/26/2009 14:52:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[v_MasterSheetBottom_KIBFG]
+AS
+SELECT     SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.PetiKecil) + SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.PetiBesar) AS PETI, SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.KuantitiKecil) 
+                      + SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.KuantitiBesar) AS KG, COUNT(DISTINCT dbo.PENGISYTIHARAN_I_KIBFG.Kod_Pengimport) AS BIL_IMPORTER, 
+                      dbo.PENGISYTIHARAN_I_KIBFG.No_Barcode AS NOMBOR_BARCODE, dbo.DESTINASI_PASAR.Nama_Pasar AS DESTINASI, SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.Nilai) 
+                      AS RM, SUM(dbo.ITEM_ISYTIHAR_I_KIBFG.Ekor) AS EKOR, dbo.NEGERI.Nama_Negeri AS NEGERI
+FROM         dbo.ITEM_ISYTIHAR_I_KIBFG INNER JOIN
+                      dbo.PENGISYTIHARAN_I_KIBFG ON dbo.ITEM_ISYTIHAR_I_KIBFG.No_SKPI = dbo.PENGISYTIHARAN_I_KIBFG.No_SKPI AND 
+                      dbo.ITEM_ISYTIHAR_I_KIBFG.Nombor_Barcode = dbo.PENGISYTIHARAN_I_KIBFG.No_Barcode INNER JOIN
+                      dbo.DESTINASI_PASAR ON dbo.ITEM_ISYTIHAR_I_KIBFG.Destinasi_Pasar = dbo.DESTINASI_PASAR.Kod_Pasar INNER JOIN
+                      dbo.NEGERI ON LEFT(dbo.ITEM_ISYTIHAR_I_KIBFG.Destinasi_Pasar, 2) = dbo.NEGERI.Kod_Negeri
+WHERE     (dbo.PENGISYTIHARAN_I_KIBFG.Status = 'A')
+GROUP BY dbo.PENGISYTIHARAN_I_KIBFG.No_Barcode, dbo.DESTINASI_PASAR.Nama_Pasar, dbo.NEGERI.Nama_Negeri
+
+
+
+------------------------------------------------
+
+
+
+
+
+
+
